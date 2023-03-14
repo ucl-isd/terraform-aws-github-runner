@@ -9,8 +9,10 @@ resource "aws_lambda_function" "github_auth" {
   role = aws_iam_role.github_auth.arn
   timeout = 300
   environment {
-    API_GATEWAY_LOGIN = var.api_gateway_login
-    API_GATEWAY_PASSWORD = var.api_gateway_password
+    variables = {
+      API_GATEWAY_LOGIN = var.api_gateway_login
+      API_GATEWAY_PASSWORD = var.api_gateway_password
+    }
   }
 }
 
