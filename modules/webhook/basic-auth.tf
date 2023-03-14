@@ -43,7 +43,7 @@ resource "aws_iam_role_policy_attachment" "github_auth" {
 }
 
 resource "aws_apigatewayv2_authorizer" "github_auth" {
-  api_id                            = aws_apigatewayv2_api.webhook.api_id
+  api_id                            = aws_apigatewayv2_api.webhook.id
   authorizer_type                   = "REQUEST"
   authorizer_uri                    = aws_lambda_function.github_auth.invoke_arn
   identity_sources                  = ["$request.header.Authorization"]
