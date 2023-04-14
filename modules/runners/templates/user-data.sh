@@ -13,15 +13,11 @@ set +x
 set -x
 %{ endif }
 
-# Enable debug logging just for the export commands
-set -x
 
 echo "export sonar_token=cfc682a63b68d4" > /etc/profile.d/env_vars.sh
 echo "sonar_token1=123456787654321" >> /etc/profile.d/env_vars.sh
 chmod +x /etc/profile.d/my_env_vars.sh
 
-# Disable debug logging after the export commands
-set +x
 
 ${pre_install}
 
