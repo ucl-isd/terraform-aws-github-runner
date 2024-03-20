@@ -123,6 +123,11 @@ module "ssm" {
 
 module "webhook" {
   source = "./modules/webhook"
+
+  # Add authentication to the api gateway
+  api_gateway_login = var.api_gateway_login
+  api_gateway_password = var.api_gateway_password
+
   ssm_paths = {
     root    = local.ssm_root_path
     webhook = var.ssm_paths.webhook

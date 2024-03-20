@@ -194,3 +194,19 @@ variable "ssm_paths" {
     webhook = string
   })
 }
+
+# =======================================================================================
+# Add authentication to the api gateway
+# =======================================================================================
+
+variable "api_gateway_login" {
+  description = "Login for the API Gateway basic authentication"
+  type        = string
+  default     = null
+}
+
+variable "api_gateway_password" {
+  description = "Password for the API Gateway basic authentication"
+  type        = string
+  default     = null
+}
